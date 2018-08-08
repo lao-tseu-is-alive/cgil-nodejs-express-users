@@ -1,0 +1,57 @@
+{
+  "name": "cgil-nodejs-express-users",
+  "version": "1.0.0",
+  "description": "A simple nodejs express users REST API",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "watch": "nodemon server/app.js",
+    "test": "export NODE_ENV=test || SET NODE_ENV=test && jest server",
+    "test-watch": "nodemon --exec 'npm test'",
+    "lint": "eslint server/**",
+    "coverage": "jest --collectCoverageFrom=server/**.js --coverage"
+  },
+  "engines": {
+    "node": "10.1.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/server/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/server/index.js",
+      "!**/vendor/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lao-tseu-is-alive/cgil-nodejs-express-users.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "users",
+    "jwt"
+  ],
+  "author": "cgil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lao-tseu-is-alive/cgil-nodejs-express-users/issues"
+  },
+  "homepage": "https://github.com/lao-tseu-is-alive/cgil-nodejs-express-users#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.18.0",
+    "jest": "^23.4.2",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
